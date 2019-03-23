@@ -1,0 +1,33 @@
+QMAKE_CXX.INCDIRS = \
+    /home/markus/android-sdk/android-ndk-r19/sysroot/usr/include/arm-linux-androideabi \
+    /home/markus/android-sdk/android-ndk-r19/sources/cxx-stl/llvm-libc++/include \
+    /home/markus/android-sdk/android-ndk-r19/sources/android/support/include \
+    /home/markus/android-sdk/android-ndk-r19/sources/cxx-stl/llvm-libc++abi/include \
+    /home/markus/android-sdk/android-ndk-r19/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.2/include \
+    /home/markus/android-sdk/android-ndk-r19/sysroot/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /home/markus/android-sdk/android-ndk-r19/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.2 \
+    /home/markus/android-sdk/android-ndk-r19/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.2/lib/linux/x86_64 \
+    /usr/lib/gcc/x86_64-linux-gnu/5.4.0 \
+    /usr/lib/x86_64-linux-gnu \
+    /home/markus/android-sdk/android-ndk-r19/toolchains/llvm/prebuilt/linux-x86_64/lib64 \
+    /lib/x86_64-linux-gnu \
+    /lib64 \
+    /usr/lib \
+    /home/markus/android-sdk/android-ndk-r19/toolchains/llvm/prebuilt/linux-x86_64/lib \
+    /lib
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_CLANG_MAJOR_VERSION = 8
+QMAKE_CXX.QMAKE_CLANG_MINOR_VERSION = 0
+QMAKE_CXX.QMAKE_CLANG_PATCH_VERSION = 2
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 4
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 2
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 1
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_CLANG_MAJOR_VERSION \
+    QMAKE_CLANG_MINOR_VERSION \
+    QMAKE_CLANG_PATCH_VERSION \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION

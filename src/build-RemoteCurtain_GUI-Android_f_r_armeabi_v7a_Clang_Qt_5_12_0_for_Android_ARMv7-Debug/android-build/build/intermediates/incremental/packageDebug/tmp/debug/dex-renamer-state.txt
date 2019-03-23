@@ -1,0 +1,4 @@
+#Sat Mar 23 22:31:18 CET 2019
+base.0=/home/markus/pm-mw/src/build-RemoteCurtain_GUI-Android_f_r_armeabi_v7a_Clang_Qt_5_12_0_for_Android_ARMv7-Debug/android-build/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
