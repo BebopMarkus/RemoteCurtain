@@ -1,5 +1,4 @@
-# test
+# RemoteCurtain
 
-Erste Änderung.
-Fünfte Änderung.
+Awesome automatic curtain sytem.
 
