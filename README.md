@@ -1,4 +1,4 @@
 # RemoteCurtain
 
-Awesome automatic curtain sytem.
+Awesome automatic curtain system.
 
