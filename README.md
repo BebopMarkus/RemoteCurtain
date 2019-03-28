@@ -6,7 +6,7 @@ Awesome automatic curtain system.
 
 
 
-[[/doc/img/Vorhangsteuerung.png]]
+![Concept](https://github.com/BebopMarkus/RemoteCurtain/blob/master/doc/img/Vorhangsteuerung.png)
 
 
 
@@ -16,4 +16,4 @@ Awesome automatic curtain system.
 
 
 
-[[/doc/img/Bildschirmfoto.png]]
+![GUI](https://github.com/BebopMarkus/RemoteCurtain/blob/master/doc/img/Bildschirmfoto.png)
