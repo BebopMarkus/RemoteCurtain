@@ -13,8 +13,9 @@
 #include <QUrl>
 #include <QDebug>
 #include <QDateTime>
+#include <QNetworkDatagram>
 
-const char DEFAULT_URL[] = "http://192.168.1.2/";
+const char DEFAULT_URL[] = "192.168.1.13";
 
 // Konstruktor
 RemoteCurtain::RemoteCurtain(QWidget *parent) :
@@ -31,7 +32,8 @@ RemoteCurtain::RemoteCurtain(QWidget *parent) :
     ui->request_button_4->setEnabled(false);
 
     connect(ui->request_button, SIGNAL(clicked()), this ,SLOT(prepareRequest()));
-    connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(prepareRequest()));
+    connect(ui->horizontalSlider, SIGNAL(sliderReleased()), this, SLOT(prepareRequest()));
+    //connect(ui->horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(prepareRequest()));
 
 
 
@@ -97,7 +99,13 @@ void RemoteCurtain::parseReply(QString replyBytes)
 
 void RemoteCurtain::on_horizontalSlider_valueChanged(int value)
 {
-    this->sliderValue = value;
+    if ((this->sliderValue - value) == -10 || (this->sliderValue - value) == 10 || value == 0 || value == 100 ){
+        this->sliderValue = value;
+        prepareRequest();
+    }
+
+    else this->sliderValue = value;
+
     qDebug() << value;
 }
 
@@ -126,4 +134,22 @@ void RemoteCurtain::on_request_button_3_clicked()
 void RemoteCurtain::on_request_button_4_clicked()
 {
     ui->horizontalSlider->setValue(100);
+}
+
+void RemoteCurtain::initSocket()
+{
+    udpSocket = new QUdpSocket(this);
+    udpSocket->bind(QHostAddress(DEFAULT_URL), 7755);
+
+    connect(udpSocket, SIGNAL(readyRead()),
+            this, SLOT(readPendingDatagrams()));
+}
+
+void RemoteCurtain::readPendingDatagrams()
+{
+    while (udpSocket->hasPendingDatagrams()) {
+        QNetworkDatagram datagram = udpSocket->receiveDatagram();
+        qDebug() << "UDP payload: " + datagram.data();
+        //processTheDatagram(datagram);
+    }
 }

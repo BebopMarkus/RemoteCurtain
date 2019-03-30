@@ -13,6 +13,7 @@
 #include <QProgressDialog>
 #include <QNetworkAccessManager>
 #include <QUrl>
+#include <QUdpSocket>
 
 namespace Ui {
 class RemoteCurtain;
@@ -27,6 +28,8 @@ public:
     ~RemoteCurtain();
     void startRequest(const QUrl &requestedUrl);
     void parseReply(QString replyBytes);
+    void initSocket();
+    void readPendingDatagrams();
 
 signals:
 
@@ -46,6 +49,7 @@ private:
     QNetworkReply *reply;
     QByteArray request;
     QByteArray mode = "A";
+    QUdpSocket * udpSocket;
     int sliderValue;
 };
 
